@@ -15,6 +15,7 @@
 @interface PositionsTVC : PullRefreshTableViewController <UITextFieldDelegate, PositionDelegate> {
     NSMutableArray *positions;
     PFObject *employee;
+    NSIndexPath *selectedIndex;
 }
 
 - (void) add:(id)sender;

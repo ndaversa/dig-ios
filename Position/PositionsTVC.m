@@ -54,24 +54,25 @@
 }
 
 - (void) didAddPosition:(PFObject *)position{
-    if (employee != nil && position){
-        [employee setObject:position forKey:@"position"];
-	}
-    
+    if (position) {
+        if (employee != nil){
+            [employee setObject:position forKey:@"position"];
+        }
+        
+        NSUInteger index = [positions indexOfObject:position];
+        if (index == NSNotFound) {
+            [positions insertObject:position atIndex:0];
+            NSIndexPath *path = [NSIndexPath indexPathForRow:0 inSection:0];
+            [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:path]
+                                  withRowAnimation:UITableViewRowAnimationTop];
+        }
+        else {
+            NSIndexPath *path = [NSIndexPath indexPathForRow:index inSection:0];
+            [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:path]
+                                  withRowAnimation:UITableViewRowAnimationFade];
+        }
+    }
     [self.navigationController popViewControllerAnimated:YES];
-    
-    NSUInteger index = [positions indexOfObject:position];
-    if (index == NSNotFound) {
-        [positions insertObject:position atIndex:0];
-        NSIndexPath *path = [NSIndexPath indexPathForRow:0 inSection:0];
-        [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:path]
-                              withRowAnimation:UITableViewRowAnimationTop];
-    }
-    else {
-        NSIndexPath *path = [NSIndexPath indexPathForRow:index inSection:0];
-        [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:path]
-                              withRowAnimation:UITableViewRowAnimationFade];
-    }
 }
 
 // Customize the appearance of table view cells.
@@ -86,11 +87,13 @@
     }
     
     if (positions.count > indexPath.row) {
-        PFObject* position = [positions objectAtIndex:indexPath.row];
+        PFObject* position = [[positions objectAtIndex:indexPath.row] fetchIfNeeded];
         cell.textLabel.text = [position objectForKey:@"desc"];
     
-        if (position == [employee objectForKey:@"position"]) 
+        if ([position.objectId isEqual: ((PFObject *)[employee objectForKey:@"position"]).objectId]) {
+            selectedIndex = indexPath;
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        }
         else
             cell.accessoryType = UITableViewCellAccessoryNone;
         
@@ -100,19 +103,20 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSUInteger index = [[tableView indexPathsForVisibleRows] indexOfObject:indexPath];
+    if (index != NSNotFound) {
+        UITableViewCell *cell = [[tableView visibleCells] objectAtIndex:index];
+        [cell setAccessoryType:UITableViewCellAccessoryNone];
+    }
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (employee != nil){
-		// If there was a previous selection, unset the accessory view for its cell.
-        PFObject *currentPosition = [employee objectForKey:@"position"];
-		
-		if (currentPosition != nil) {
-            [positions indexOfObject:currentPosition];
-            NSIndexPath *selectionIndexPath = [NSIndexPath indexPathWithIndex:[positions indexOfObject:currentPosition]];
-			UITableViewCell *checkedCell = [tableView cellForRowAtIndexPath:selectionIndexPath];
-			checkedCell.accessoryType = UITableViewCellAccessoryNone;
-		}
-		
+        if (selectedIndex && selectedIndex != indexPath)
+            [tableView cellForRowAtIndexPath:selectedIndex].accessoryType = UITableViewCellAccessoryNone;
+        selectedIndex = indexPath;
 		[[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryCheckmark];    
 		
         [employee setObject:[positions objectAtIndex:indexPath.row] forKey:@"position"];
@@ -156,9 +160,20 @@
                            withObject:nil];
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        PFObject *objectToRemove = [positions objectAtIndex:indexPath.row];
+        [positions removeObject:objectToRemove];
+        [objectToRemove deleteInBackground];
+        
+        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                              withRowAnimation:UITableViewRowAnimationAutomatic];
+    }   
+}
+
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Do not allow editing items
-    return NO;
+    return YES;
 }
 
 #pragma mark -

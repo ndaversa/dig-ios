@@ -50,20 +50,22 @@
 }
 
 - (void) didAddEmployee:(PFObject *)employee{
+    if (employee) {
+        NSUInteger index = [employees indexOfObject:employee];
+        if (index == NSNotFound) {
+            [employees insertObject:employee atIndex:0];
+            NSIndexPath *path = [NSIndexPath indexPathForRow:0 inSection:0];
+            [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:path]
+                                  withRowAnimation:UITableViewRowAnimationTop];
+        }
+        else {
+            NSIndexPath *path = [NSIndexPath indexPathForRow:index inSection:0];
+            [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:path]
+                                  withRowAnimation:UITableViewRowAnimationFade];
+            
+        }
+    }
     [self.navigationController popViewControllerAnimated:YES];
-    NSUInteger index = [employees indexOfObject:employee];
-    if (index == NSNotFound) {
-        [employees insertObject:employee atIndex:0];
-        NSIndexPath *path = [NSIndexPath indexPathForRow:0 inSection:0];
-        [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:path]
-                              withRowAnimation:UITableViewRowAnimationTop];
-    }
-    else {
-        NSIndexPath *path = [NSIndexPath indexPathForRow:index inSection:0];
-        [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:path]
-                              withRowAnimation:UITableViewRowAnimationFade];
-        
-    }
 }
 
 // Customize the appearance of table view cells.
@@ -95,6 +97,22 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        PFObject *objectToRemove = [employees objectAtIndex:indexPath.row];
+        [employees removeObject:objectToRemove];
+        [objectToRemove deleteInBackground];
+        
+        [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                              withRowAnimation:UITableViewRowAnimationAutomatic];
+    }   
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
 - (void)refreshInCurrentThread {
     @autoreleasepool {
     
@@ -123,11 +141,6 @@
 - (void)refresh {
     [self performSelectorInBackground:@selector(refreshInCurrentThread)
                            withObject:nil];
-}
-
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Do not allow editing items
-    return NO;
 }
 
 #pragma mark -

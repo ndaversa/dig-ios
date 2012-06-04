@@ -192,7 +192,7 @@
         case POSITION_SECTION:
 			switch (indexPath.row){
 				case 0:
-                    text = [[employee objectForKey:@"position"] objectForKey:@"desc"];
+                    text = [[[employee objectForKey:@"position"] fetchIfNeeded] objectForKey:@"desc"];
 					break;
 			}
 			break;
@@ -210,7 +210,7 @@
         case ACTIVE_SECTION:
             break;
         case POSITION_SECTION:
-            nextViewController = [[PositionsTVC alloc] init];
+            nextViewController = [[PositionsTVC alloc] initWithStyle:UITableViewStyleGrouped];
             ((PositionsTVC *)nextViewController).employee = employee;
             break;
         default:
