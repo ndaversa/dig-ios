@@ -9,6 +9,7 @@
 #import "VerticalTabBarController.h"
 #import "PositionsTVC.h"
 #import "EmployeesTVC.h"
+#import "JobsTVC.h"
 
 @interface VerticalTabBarController () {
     NSArray* viewControllers;
@@ -29,21 +30,24 @@
 
     PositionsTVC * positionsTVC = [[PositionsTVC alloc] initWithStyle:UITableViewStyleGrouped];
     positionsTVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Positions" image:[UIImage imageNamed:@"positions"] tag: 0];
-    
     UINavigationController *positionsNVC = [[UINavigationController alloc] init];
     positionsNVC.navigationBar.tintColor = [UIColor darkGrayColor];
     [positionsNVC pushViewController:positionsTVC animated:NO];
-    
     [controllersToAdd addObject:positionsNVC];
     
     EmployeesTVC * employeesTVC = [[EmployeesTVC alloc] initWithStyle:UITableViewStyleGrouped];
     employeesTVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Employees" image:[UIImage imageNamed:@"employees"] tag: 0];
-    
     UINavigationController *employeesNVC = [[UINavigationController alloc] init];
     employeesNVC.navigationBar.tintColor = [UIColor darkGrayColor];
     [employeesNVC pushViewController:employeesTVC animated:NO];
-    
     [controllersToAdd addObject:employeesNVC];
+    
+    JobsTVC * jobsTVC = [[JobsTVC alloc] initWithStyle:UITableViewStyleGrouped];
+    jobsTVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Jobs" image:[UIImage imageNamed:@"locations"] tag: 0];
+    UINavigationController *jobsNVC = [[UINavigationController alloc] init];
+    jobsNVC.navigationBar.tintColor = [UIColor darkGrayColor];
+    [jobsNVC pushViewController:jobsTVC animated:NO];
+    [controllersToAdd addObject:jobsNVC];
     
     viewControllers = [NSArray arrayWithArray:controllersToAdd];
     
