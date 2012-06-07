@@ -108,16 +108,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (reporting){
-//        JobsheetSelectionTVC *jobsheetTVC = [[JobsheetSelectionTVC alloc] initForReporting];
-//        jobsheetTVC.delegate = self;
-//        PFObject *schedule = [[schedules objectAtIndex:indexPath.row] fetchIfNeeded];
-//        jobsheetTVC.date = [schedule objectForKey:@"date"];
-//        
-//        UINavigationController *jobsheetNVC = [[UINavigationController alloc] init];
-//        jobsheetNVC.modalPresentationStyle = UIModalPresentationPageSheet;
-//        [jobsheetNVC pushViewController:jobsheetTVC animated:NO];
-//        [self.navigationController presentModalViewController:jobsheetNVC animated:YES];
-//        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        JobsheetsTVC *jobsheetTVC = [[JobsheetsTVC alloc] initForReporting];
+        jobsheetTVC.delegate = self;
+        PFObject *schedule = [[schedules objectAtIndex:indexPath.row] fetchIfNeeded];
+        jobsheetTVC.date = [schedule objectForKey:@"date"];
+        
+        UINavigationController *jobsheetNVC = [[UINavigationController alloc] init];
+        jobsheetNVC.modalPresentationStyle = UIModalPresentationPageSheet;
+        [jobsheetNVC pushViewController:jobsheetTVC animated:NO];
+        [self.navigationController presentModalViewController:jobsheetNVC animated:YES];
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
 	}
 	else{
 		ScheduleDetailTVC *detailController = [[ScheduleDetailTVC alloc] initWithStyle:UITableViewStyleGrouped];
@@ -126,6 +126,10 @@
         [self.navigationController pushViewController:detailController animated:YES];
 	}
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void) didSelectJobsheet {
+    [self.navigationController dismissModalViewControllerAnimated:YES];
 }
 
 - (void)refreshInCurrentThread {
@@ -182,4 +186,3 @@
 }
 
 @end
-

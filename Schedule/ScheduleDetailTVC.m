@@ -240,16 +240,16 @@
 			switch (indexPath.row){
 				case 0:
                 {
-//                    [self createJobsheetsForDate:[schedule objectForKey:@"date"]];
-//                    JobsheetSelectionTVC *jobsheetTVC = [[JobsheetSelectionTVC alloc] initWithStyle:UITableViewStyleGrouped];
-//                    jobsheetTVC.delegate = self;
-//                    jobsheetTVC.date = [schedule objectForKey:@"date"];
-//                    
-//                    UINavigationController *jobsheetNVC = [[UINavigationController alloc] init];
-//                    jobsheetNVC.modalPresentationStyle = UIModalPresentationPageSheet;
-//                    [jobsheetNVC pushViewController:jobsheetTVC animated:NO];
-//                    
-//                    [self.navigationController presentModalViewController:jobsheetNVC animated:YES];
+                    [self createJobsheetsForDate:[schedule objectForKey:@"date"]];
+                    JobsheetsTVC *jobsheetTVC = [[JobsheetsTVC alloc] initWithStyle:UITableViewStyleGrouped];
+                    jobsheetTVC.delegate = self;
+                    jobsheetTVC.date = [schedule objectForKey:@"date"];
+                    
+                    UINavigationController *jobsheetNVC = [[UINavigationController alloc] init];
+                    jobsheetNVC.modalPresentationStyle = UIModalPresentationPageSheet;
+                    [jobsheetNVC pushViewController:jobsheetTVC animated:NO];
+                    
+                    [self.navigationController presentModalViewController:jobsheetNVC animated:YES];
 					break;
                 }
 			}
@@ -277,7 +277,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-- (void) jobsheetSelectionDidFinish{
+- (void) didSelectJobsheet {
     [self.navigationController dismissModalViewControllerAnimated:YES];
 }
 

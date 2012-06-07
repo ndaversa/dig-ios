@@ -10,7 +10,7 @@
 #import "PullRefreshTableViewController.h"
 #import "ScheduleDetailTVC.h"
 
-@interface SchedulesTVC : PullRefreshTableViewController <UITextFieldDelegate, ScheduleDelegate>  {
+@interface SchedulesTVC : PullRefreshTableViewController <UITextFieldDelegate, ScheduleDelegate, JobsheetDelegate>  {
     NSDateFormatter *dateFormatter;
     NSMutableArray *schedules;
     BOOL reporting;

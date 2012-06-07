@@ -8,13 +8,14 @@
 
 #import "Parse/Parse.h"
 #import <UIKit/UIKit.h>
+#import "JobsheetsTVC.h"
 
 @protocol ScheduleDelegate <NSObject>
 @required
 - (void) didAddSchedule:(PFObject *)schedule;
 @end
 
-@interface ScheduleDetailTVC : UITableViewController <UITextViewDelegate, UIPopoverControllerDelegate/*, JobsheetSelectionDelegate, ScheduleSummaryDelegate*/> {
+@interface ScheduleDetailTVC : UITableViewController <UITextViewDelegate, UIPopoverControllerDelegate, JobsheetDelegate/*, ScheduleSummaryDelegate*/> {
     PFObject *schedule;
     id <ScheduleDelegate> __weak delegate;
     NSDateFormatter *dateFormatter;
