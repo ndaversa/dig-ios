@@ -43,7 +43,12 @@
 		01860E0E157D8DE200D573F7 /* JobsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 01860E0D157D8DE200D573F7 /* JobsTVC.m */; };
 		01860E11157D90C000D573F7 /* JobDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 01860E10157D90C000D573F7 /* JobDetailTVC.m */; };
 		01860E13157D921800D573F7 /* JobDetailTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01860E12157D921800D573F7 /* JobDetailTVC.xib */; };
+		0198B1D315803014007E32FD /* schedules.png in Resources */ = {isa = PBXBuildFile; fileRef = 0198B1D215803014007E32FD /* schedules.png */; };
 		01DF9D27157D95FB00D387C6 /* locations.png in Resources */ = {isa = PBXBuildFile; fileRef = 01DF9D26157D95FB00D387C6 /* locations.png */; };
+		01EAFF6E158022B000A486EE /* SchedulesTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EAFF6D158022B000A486EE /* SchedulesTVC.m */; };
+		01EAFF711580262D00A486EE /* ScheduleDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EAFF701580262D00A486EE /* ScheduleDetailTVC.m */; };
+		01EAFF731580277C00A486EE /* ScheduleDetailTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01EAFF721580277C00A486EE /* ScheduleDetailTVC.xib */; };
+		01EAFF7715802C7B00A486EE /* NSDate+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EAFF7615802C7B00A486EE /* NSDate+Helpers.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,8 +102,16 @@
 		01860E0D157D8DE200D573F7 /* JobsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JobsTVC.m; path = Job/JobsTVC.m; sourceTree = "<group>"; };
 		01860E0F157D90C000D573F7 /* JobDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JobDetailTVC.h; path = Job/JobDetailTVC.h; sourceTree = "<group>"; };
 		01860E10157D90C000D573F7 /* JobDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JobDetailTVC.m; path = Job/JobDetailTVC.m; sourceTree = "<group>"; };
-		01860E12157D921800D573F7 /* JobDetailTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JobDetailTVC.xib; sourceTree = "<group>"; };
-		01DF9D26157D95FB00D387C6 /* locations.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locations.png; sourceTree = "<group>"; };
+		01860E12157D921800D573F7 /* JobDetailTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JobDetailTVC.xib; path = Job/JobDetailTVC.xib; sourceTree = "<group>"; };
+		0198B1D215803014007E32FD /* schedules.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = schedules.png; path = Schedule/schedules.png; sourceTree = "<group>"; };
+		01DF9D26157D95FB00D387C6 /* locations.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = locations.png; path = Job/locations.png; sourceTree = "<group>"; };
+		01EAFF6C158022B000A486EE /* SchedulesTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SchedulesTVC.h; path = Schedule/SchedulesTVC.h; sourceTree = "<group>"; };
+		01EAFF6D158022B000A486EE /* SchedulesTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SchedulesTVC.m; path = Schedule/SchedulesTVC.m; sourceTree = "<group>"; };
+		01EAFF6F1580262D00A486EE /* ScheduleDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleDetailTVC.h; path = Schedule/ScheduleDetailTVC.h; sourceTree = "<group>"; };
+		01EAFF701580262D00A486EE /* ScheduleDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScheduleDetailTVC.m; path = Schedule/ScheduleDetailTVC.m; sourceTree = "<group>"; };
+		01EAFF721580277C00A486EE /* ScheduleDetailTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScheduleDetailTVC.xib; path = Schedule/ScheduleDetailTVC.xib; sourceTree = "<group>"; };
+		01EAFF7515802C7B00A486EE /* NSDate+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+Helpers.h"; path = "Helpers/NSDate+Helpers.h"; sourceTree = "<group>"; };
+		01EAFF7615802C7B00A486EE /* NSDate+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+Helpers.m"; path = "Helpers/NSDate+Helpers.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +142,9 @@
 				016B04F5157C491A00B4F151 /* Application */,
 				016B050A157C497300B4F151 /* Employee */,
 				016B0511157C497300B4F151 /* Position */,
+				01EAFF6A1580227200A486EE /* Schedule */,
 				01860E0A157D8DA300D573F7 /* Job */,
+				01EAFF7415802C1500A486EE /* Helpers */,
 				016B0518157C497300B4F151 /* ThirdParty */,
 				016B04EE157C491A00B4F151 /* Frameworks */,
 				016B04EC157C491A00B4F151 /* Products */,
@@ -251,14 +266,36 @@
 		01860E0A157D8DA300D573F7 /* Job */ = {
 			isa = PBXGroup;
 			children = (
-				01DF9D26157D95FB00D387C6 /* locations.png */,
-				01860E0C157D8DE200D573F7 /* JobsTVC.h */,
-				01860E0D157D8DE200D573F7 /* JobsTVC.m */,
 				01860E0F157D90C000D573F7 /* JobDetailTVC.h */,
 				01860E10157D90C000D573F7 /* JobDetailTVC.m */,
 				01860E12157D921800D573F7 /* JobDetailTVC.xib */,
+				01DF9D26157D95FB00D387C6 /* locations.png */,
+				01860E0C157D8DE200D573F7 /* JobsTVC.h */,
+				01860E0D157D8DE200D573F7 /* JobsTVC.m */,
 			);
 			name = Job;
+			sourceTree = "<group>";
+		};
+		01EAFF6A1580227200A486EE /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				01EAFF6F1580262D00A486EE /* ScheduleDetailTVC.h */,
+				01EAFF701580262D00A486EE /* ScheduleDetailTVC.m */,
+				01EAFF721580277C00A486EE /* ScheduleDetailTVC.xib */,
+				0198B1D215803014007E32FD /* schedules.png */,
+				01EAFF6C158022B000A486EE /* SchedulesTVC.h */,
+				01EAFF6D158022B000A486EE /* SchedulesTVC.m */,
+			);
+			name = Schedule;
+			sourceTree = "<group>";
+		};
+		01EAFF7415802C1500A486EE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				01EAFF7515802C7B00A486EE /* NSDate+Helpers.h */,
+				01EAFF7615802C7B00A486EE /* NSDate+Helpers.m */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,6 +362,8 @@
 				016B054D157C4ABF00B4F151 /* iPhone.storyboard in Resources */,
 				01860E13157D921800D573F7 /* JobDetailTVC.xib in Resources */,
 				01DF9D27157D95FB00D387C6 /* locations.png in Resources */,
+				01EAFF731580277C00A486EE /* ScheduleDetailTVC.xib in Resources */,
+				0198B1D315803014007E32FD /* schedules.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +387,9 @@
 				016B0550157C4B0E00B4F151 /* VerticalTabBarController.m in Sources */,
 				01860E0E157D8DE200D573F7 /* JobsTVC.m in Sources */,
 				01860E11157D90C000D573F7 /* JobDetailTVC.m in Sources */,
+				01EAFF6E158022B000A486EE /* SchedulesTVC.m in Sources */,
+				01EAFF711580262D00A486EE /* ScheduleDetailTVC.m in Sources */,
+				01EAFF7715802C7B00A486EE /* NSDate+Helpers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

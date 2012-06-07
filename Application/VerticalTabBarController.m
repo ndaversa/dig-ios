@@ -10,6 +10,7 @@
 #import "PositionsTVC.h"
 #import "EmployeesTVC.h"
 #import "JobsTVC.h"
+#import "SchedulesTVC.h"
 
 @interface VerticalTabBarController () {
     NSArray* viewControllers;
@@ -48,6 +49,13 @@
     jobsNVC.navigationBar.tintColor = [UIColor darkGrayColor];
     [jobsNVC pushViewController:jobsTVC animated:NO];
     [controllersToAdd addObject:jobsNVC];
+    
+    SchedulesTVC * schedulesTVC = [[SchedulesTVC alloc] initWithStyle:UITableViewStyleGrouped];
+    schedulesTVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Schedules" image:[UIImage imageNamed:@"schedules"] tag: 0];
+    UINavigationController *schedulesNVC = [[UINavigationController alloc] init];
+    schedulesNVC.navigationBar.tintColor = [UIColor darkGrayColor];
+    [schedulesNVC pushViewController:schedulesTVC animated:NO];
+    [controllersToAdd addObject:schedulesNVC];
     
     viewControllers = [NSArray arrayWithArray:controllersToAdd];
     
