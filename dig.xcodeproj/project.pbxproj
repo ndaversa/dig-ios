@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0141F38215818B2C000A3C92 /* UIImage+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 0141F38115818B2C000A3C92 /* UIImage+Helpers.m */; };
+		0141F38B15819B47000A3C92 /* fontawesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0141F38A15819B47000A3C92 /* fontawesome.ttf */; };
 		016B04F0157C491A00B4F151 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016B04EF157C491A00B4F151 /* UIKit.framework */; };
 		016B04F2157C491A00B4F151 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016B04F1157C491A00B4F151 /* Foundation.framework */; };
 		016B04F4157C491A00B4F151 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016B04F3157C491A00B4F151 /* CoreGraphics.framework */; };
@@ -14,11 +16,9 @@
 		016B0500157C491A00B4F151 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 016B04FF157C491A00B4F151 /* AppDelegate.m */; };
 		016B0528157C497300B4F151 /* EmployeeDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 016B050C157C497300B4F151 /* EmployeeDetailTVC.m */; };
 		016B0529157C497300B4F151 /* EmployeeDetailTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 016B050D157C497300B4F151 /* EmployeeDetailTVC.xib */; };
-		016B052A157C497300B4F151 /* employees.png in Resources */ = {isa = PBXBuildFile; fileRef = 016B050E157C497300B4F151 /* employees.png */; };
 		016B052B157C497300B4F151 /* EmployeesTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 016B0510157C497300B4F151 /* EmployeesTVC.m */; };
 		016B052C157C497300B4F151 /* PositionDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 016B0513157C497300B4F151 /* PositionDetailTVC.m */; };
 		016B052D157C497300B4F151 /* PositionDetailTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 016B0514157C497300B4F151 /* PositionDetailTVC.xib */; };
-		016B052E157C497300B4F151 /* positions.png in Resources */ = {isa = PBXBuildFile; fileRef = 016B0515157C497300B4F151 /* positions.png */; };
 		016B052F157C497300B4F151 /* PositionsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 016B0517157C497300B4F151 /* PositionsTVC.m */; };
 		016B0530157C497300B4F151 /* FSVerticalTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 016B051B157C497300B4F151 /* FSVerticalTabBar.m */; };
 		016B0531157C497300B4F151 /* FSVerticalTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 016B051D157C497300B4F151 /* FSVerticalTabBarButton.m */; };
@@ -43,10 +43,8 @@
 		01860E0E157D8DE200D573F7 /* JobsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 01860E0D157D8DE200D573F7 /* JobsTVC.m */; };
 		01860E11157D90C000D573F7 /* JobDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 01860E10157D90C000D573F7 /* JobDetailTVC.m */; };
 		01860E13157D921800D573F7 /* JobDetailTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01860E12157D921800D573F7 /* JobDetailTVC.xib */; };
-		0198B1D315803014007E32FD /* schedules.png in Resources */ = {isa = PBXBuildFile; fileRef = 0198B1D215803014007E32FD /* schedules.png */; };
 		0198B1DD158042EF007E32FD /* JobsheetsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0198B1DC158042EF007E32FD /* JobsheetsTVC.m */; };
 		0198B1DF15804928007E32FD /* JobsheetSelectionTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0198B1DE15804927007E32FD /* JobsheetSelectionTVC.xib */; };
-		01DF9D27157D95FB00D387C6 /* locations.png in Resources */ = {isa = PBXBuildFile; fileRef = 01DF9D26157D95FB00D387C6 /* locations.png */; };
 		01EAFF6E158022B000A486EE /* SchedulesTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EAFF6D158022B000A486EE /* SchedulesTVC.m */; };
 		01EAFF711580262D00A486EE /* ScheduleDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EAFF701580262D00A486EE /* ScheduleDetailTVC.m */; };
 		01EAFF731580277C00A486EE /* ScheduleDetailTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01EAFF721580277C00A486EE /* ScheduleDetailTVC.xib */; };
@@ -54,6 +52,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0141F38015818B2C000A3C92 /* UIImage+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Helpers.h"; path = "Helpers/UIImage+Helpers.h"; sourceTree = "<group>"; };
+		0141F38115818B2C000A3C92 /* UIImage+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Helpers.m"; path = "Helpers/UIImage+Helpers.m"; sourceTree = "<group>"; };
+		0141F38A15819B47000A3C92 /* fontawesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fontawesome.ttf; sourceTree = "<group>"; };
 		016B04EB157C491A00B4F151 /* dig.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dig.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		016B04EF157C491A00B4F151 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		016B04F1157C491A00B4F151 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -66,13 +67,11 @@
 		016B050B157C497300B4F151 /* EmployeeDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeeDetailTVC.h; sourceTree = "<group>"; };
 		016B050C157C497300B4F151 /* EmployeeDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeeDetailTVC.m; sourceTree = "<group>"; };
 		016B050D157C497300B4F151 /* EmployeeDetailTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmployeeDetailTVC.xib; sourceTree = "<group>"; };
-		016B050E157C497300B4F151 /* employees.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = employees.png; sourceTree = "<group>"; };
 		016B050F157C497300B4F151 /* EmployeesTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmployeesTVC.h; sourceTree = "<group>"; };
 		016B0510157C497300B4F151 /* EmployeesTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmployeesTVC.m; sourceTree = "<group>"; };
 		016B0512157C497300B4F151 /* PositionDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PositionDetailTVC.h; sourceTree = "<group>"; };
 		016B0513157C497300B4F151 /* PositionDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PositionDetailTVC.m; sourceTree = "<group>"; };
 		016B0514157C497300B4F151 /* PositionDetailTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PositionDetailTVC.xib; sourceTree = "<group>"; };
-		016B0515157C497300B4F151 /* positions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = positions.png; sourceTree = "<group>"; };
 		016B0516157C497300B4F151 /* PositionsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PositionsTVC.h; sourceTree = "<group>"; };
 		016B0517157C497300B4F151 /* PositionsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PositionsTVC.m; sourceTree = "<group>"; };
 		016B051A157C497300B4F151 /* FSVerticalTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSVerticalTabBar.h; sourceTree = "<group>"; };
@@ -105,11 +104,9 @@
 		01860E0F157D90C000D573F7 /* JobDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JobDetailTVC.h; path = Job/JobDetailTVC.h; sourceTree = "<group>"; };
 		01860E10157D90C000D573F7 /* JobDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JobDetailTVC.m; path = Job/JobDetailTVC.m; sourceTree = "<group>"; };
 		01860E12157D921800D573F7 /* JobDetailTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JobDetailTVC.xib; path = Job/JobDetailTVC.xib; sourceTree = "<group>"; };
-		0198B1D215803014007E32FD /* schedules.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = schedules.png; path = Schedule/schedules.png; sourceTree = "<group>"; };
 		0198B1DB158042EF007E32FD /* JobsheetsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JobsheetsTVC.h; path = Jobsheet/JobsheetsTVC.h; sourceTree = "<group>"; };
 		0198B1DC158042EF007E32FD /* JobsheetsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JobsheetsTVC.m; path = Jobsheet/JobsheetsTVC.m; sourceTree = "<group>"; };
 		0198B1DE15804927007E32FD /* JobsheetSelectionTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JobsheetSelectionTVC.xib; sourceTree = "<group>"; };
-		01DF9D26157D95FB00D387C6 /* locations.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = locations.png; path = Job/locations.png; sourceTree = "<group>"; };
 		01EAFF6C158022B000A486EE /* SchedulesTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SchedulesTVC.h; path = Schedule/SchedulesTVC.h; sourceTree = "<group>"; };
 		01EAFF6D158022B000A486EE /* SchedulesTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SchedulesTVC.m; path = Schedule/SchedulesTVC.m; sourceTree = "<group>"; };
 		01EAFF6F1580262D00A486EE /* ScheduleDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleDetailTVC.h; path = Schedule/ScheduleDetailTVC.h; sourceTree = "<group>"; };
@@ -212,7 +209,6 @@
 				016B050B157C497300B4F151 /* EmployeeDetailTVC.h */,
 				016B050C157C497300B4F151 /* EmployeeDetailTVC.m */,
 				016B050D157C497300B4F151 /* EmployeeDetailTVC.xib */,
-				016B050E157C497300B4F151 /* employees.png */,
 				016B050F157C497300B4F151 /* EmployeesTVC.h */,
 				016B0510157C497300B4F151 /* EmployeesTVC.m */,
 			);
@@ -225,7 +221,6 @@
 				016B0512157C497300B4F151 /* PositionDetailTVC.h */,
 				016B0513157C497300B4F151 /* PositionDetailTVC.m */,
 				016B0514157C497300B4F151 /* PositionDetailTVC.xib */,
-				016B0515157C497300B4F151 /* positions.png */,
 				016B0516157C497300B4F151 /* PositionsTVC.h */,
 				016B0517157C497300B4F151 /* PositionsTVC.m */,
 			);
@@ -235,6 +230,7 @@
 		016B0518157C497300B4F151 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				0141F38A15819B47000A3C92 /* fontawesome.ttf */,
 				016B053A157C49E700B4F151 /* Parse.framework */,
 				016B0519157C497300B4F151 /* FSVerticalTabBar */,
 				016B0523157C497300B4F151 /* PullRefresh */,
@@ -275,7 +271,6 @@
 				01860E0F157D90C000D573F7 /* JobDetailTVC.h */,
 				01860E10157D90C000D573F7 /* JobDetailTVC.m */,
 				01860E12157D921800D573F7 /* JobDetailTVC.xib */,
-				01DF9D26157D95FB00D387C6 /* locations.png */,
 				01860E0C157D8DE200D573F7 /* JobsTVC.h */,
 				01860E0D157D8DE200D573F7 /* JobsTVC.m */,
 			);
@@ -298,7 +293,6 @@
 				01EAFF6F1580262D00A486EE /* ScheduleDetailTVC.h */,
 				01EAFF701580262D00A486EE /* ScheduleDetailTVC.m */,
 				01EAFF721580277C00A486EE /* ScheduleDetailTVC.xib */,
-				0198B1D215803014007E32FD /* schedules.png */,
 				01EAFF6C158022B000A486EE /* SchedulesTVC.h */,
 				01EAFF6D158022B000A486EE /* SchedulesTVC.m */,
 			);
@@ -310,6 +304,8 @@
 			children = (
 				01EAFF7515802C7B00A486EE /* NSDate+Helpers.h */,
 				01EAFF7615802C7B00A486EE /* NSDate+Helpers.m */,
+				0141F38015818B2C000A3C92 /* UIImage+Helpers.h */,
+				0141F38115818B2C000A3C92 /* UIImage+Helpers.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -366,9 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				016B0529157C497300B4F151 /* EmployeeDetailTVC.xib in Resources */,
-				016B052A157C497300B4F151 /* employees.png in Resources */,
 				016B052D157C497300B4F151 /* PositionDetailTVC.xib in Resources */,
-				016B052E157C497300B4F151 /* positions.png in Resources */,
 				016B0533157C497300B4F151 /* ios-linen.png in Resources */,
 				016B0534157C497300B4F151 /* selectionIndicatorImage.png in Resources */,
 				016B0535157C497300B4F151 /* selectionIndicatorImage@2x.png in Resources */,
@@ -377,10 +371,9 @@
 				016B054B157C4A8800B4F151 /* iPad.storyboard in Resources */,
 				016B054D157C4ABF00B4F151 /* iPhone.storyboard in Resources */,
 				01860E13157D921800D573F7 /* JobDetailTVC.xib in Resources */,
-				01DF9D27157D95FB00D387C6 /* locations.png in Resources */,
 				01EAFF731580277C00A486EE /* ScheduleDetailTVC.xib in Resources */,
-				0198B1D315803014007E32FD /* schedules.png in Resources */,
 				0198B1DF15804928007E32FD /* JobsheetSelectionTVC.xib in Resources */,
+				0141F38B15819B47000A3C92 /* fontawesome.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +401,7 @@
 				01EAFF711580262D00A486EE /* ScheduleDetailTVC.m in Sources */,
 				01EAFF7715802C7B00A486EE /* NSDate+Helpers.m in Sources */,
 				0198B1DD158042EF007E32FD /* JobsheetsTVC.m in Sources */,
+				0141F38215818B2C000A3C92 /* UIImage+Helpers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
