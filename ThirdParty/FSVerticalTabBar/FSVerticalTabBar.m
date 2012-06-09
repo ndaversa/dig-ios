@@ -11,7 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 
-#define DEFAULT_ITEM_HEIGHT 80.0
+#define DEFAULT_ITEM_HEIGHT 70.0
 
 
 @implementation FSVerticalTabBar
@@ -166,6 +166,7 @@
         cell = [[FSVerticalTabBarButton alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:vtbci];
     }
     
+    cell.selectedImageTintColor = self.selectedImageTintColor;
     cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:self.selectionIndicatorImage];
     
     UITabBarItem *item = [self.items objectAtIndex:indexPath.row];

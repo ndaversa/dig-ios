@@ -83,6 +83,12 @@
     positionDesc.delegate = self;
     
     [positionDesc becomeFirstResponder];
+    
+    self.navigationController.navigationBar.tintColor = NAVIGATIONBAR_TINT_COLOR;
+    self.tableView.backgroundView = nil;
+    self.tableView.backgroundColor = TABLEVIEW_BACKGROUND_COLOR;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    self.tableView.separatorColor = TABLEVIEW_SEPARATOR_COLOR;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -221,13 +227,31 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row % 2)
+    {
+        cell.backgroundColor = TABLEVIEW_CELL1_BACKGROUND_COLOR;
+        cell.textLabel.textColor = TABLEVIEW_CELL1_TEXT_COLOR;
+    }
+    else { 
+        cell.backgroundColor = TABLEVIEW_CELL2_BACKGROUND_COLOR;
+        cell.textLabel.textColor = TABLEVIEW_CELL2_TEXT_COLOR;
+    }
+}
 
 - (void)save {
-    [position setObject:positionDesc.text forKey:@"desc"];
-    [position setObject:(NSDecimalNumber*)[currencyFormatter numberFromString:positionPayRate.text] forKey:@"payRate"];
-    
-    [position saveInBackground];
-	[self.delegate didAddPosition:position];
+    @try {
+        [position setObject:positionDesc.text forKey:@"desc"];
+        [position setObject:(NSDecimalNumber*)[currencyFormatter numberFromString:positionPayRate.text] forKey:@"payRate"];
+        
+        [position saveInBackground];
+    }
+    @catch (NSException *exception) {
+        position = nil;
+    }
+    @finally {
+        [self.delegate didAddPosition:position];
+    }
 }
 
 

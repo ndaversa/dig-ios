@@ -140,22 +140,14 @@
             newPositions = [[NSMutableArray alloc] init];
         }
         positions = newPositions;
-        [self performSelectorOnMainThread:@selector(reloadData)
-                               withObject:nil
-                            waitUntilDone:NO];
-        if (isLoading) {
-            [self stopLoading];
-        }
-    
+        [self performSelectorOnMainThread:@selector(didRefresh)
+                           withObject:nil
+                        waitUntilDone:NO];
     }
 }
 
-- (void)reloadData {
-    if (!isLoading)
-        [self.tableView reloadData];
-}
-
 - (void)refresh {
+    [self willRefresh];
     [self performSelectorInBackground:@selector(refreshInCurrentThread)
                            withObject:nil];
 }

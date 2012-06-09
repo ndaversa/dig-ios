@@ -65,6 +65,12 @@
     jobLocation.delegate = self;
     
     [jobLocation becomeFirstResponder];
+    
+    self.navigationController.navigationBar.tintColor = NAVIGATIONBAR_TINT_COLOR;
+    self.tableView.backgroundView = nil;
+    self.tableView.backgroundColor = TABLEVIEW_BACKGROUND_COLOR;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    self.tableView.separatorColor = TABLEVIEW_SEPARATOR_COLOR;
 }
 
 - (void)viewDidUnload
@@ -144,15 +150,32 @@
     return cell;
 }
 
-- (void)save {
-    [job setObject:jobLocation.text forKey:@"location"];
-    [job setObject:[NSNumber numberWithInteger:(jobActive.selectedSegmentIndex?0:1)] forKey:@"active"];
-    
-    [job saveInBackground];
-    
-	[self.delegate didAddJob:job];
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row % 2)
+    {
+        cell.backgroundColor = TABLEVIEW_CELL1_BACKGROUND_COLOR;
+        cell.textLabel.textColor = TABLEVIEW_CELL1_TEXT_COLOR;
+    }
+    else { 
+        cell.backgroundColor = TABLEVIEW_CELL2_BACKGROUND_COLOR;
+        cell.textLabel.textColor = TABLEVIEW_CELL2_TEXT_COLOR;
+    }
 }
 
+- (void)save {
+    @try {
+        [job setObject:jobLocation.text forKey:@"location"];
+        [job setObject:[NSNumber numberWithInteger:(jobActive.selectedSegmentIndex?0:1)] forKey:@"active"];
+        
+        [job saveInBackground];
+    }
+    @catch (NSException *exception) {
+        job = nil;
+    }
+    @finally {
+        [self.delegate didAddJob:job];
+    }
+}
 
 - (void)cancel {
     [self.delegate didAddJob:nil];

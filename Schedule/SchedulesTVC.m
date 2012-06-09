@@ -142,22 +142,14 @@
             newSchedules = [[NSMutableArray alloc] init];
         }
         schedules = newSchedules;
-        [self performSelectorOnMainThread:@selector(reloadData)
+        [self performSelectorOnMainThread:@selector(didRefresh)
                                withObject:nil
                             waitUntilDone:NO];
-        if (isLoading) {
-            [self stopLoading];
-        }
-    
     }
 }
 
-- (void)reloadData {
-    if (!isLoading)
-        [self.tableView reloadData];
-}
-
 - (void)refresh {
+    [self willRefresh];
     [self performSelectorInBackground:@selector(refreshInCurrentThread)
                            withObject:nil];
 }

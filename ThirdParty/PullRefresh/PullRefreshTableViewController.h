@@ -37,6 +37,7 @@
     UIActivityIndicatorView *refreshSpinner;
     BOOL isDragging;
     BOOL isLoading;
+    BOOL manualRefresh;
     NSString *textPull;
     NSString *textRelease;
     NSString *textLoading;
@@ -54,5 +55,7 @@
 - (void)startLoading;
 - (void)stopLoading;
 - (void)refresh;
+- (void)willRefresh;
+- (void)didRefresh;
 
 @end

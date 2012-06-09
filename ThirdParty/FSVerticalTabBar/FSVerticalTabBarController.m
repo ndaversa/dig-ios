@@ -9,7 +9,7 @@
 #import "FSVerticalTabBarController.h"
 
 
-#define DEFAULT_TAB_BAR_HEIGHT 100.0
+#define DEFAULT_TAB_BAR_HEIGHT 80.0
 
 
 @interface FSVerticalTabBarController ()
@@ -58,7 +58,8 @@
     // sets the value for the first time as -1 for the viewController to load itself properly
     _selectedIndex = -1;
     
-    self.selectedIndex = [viewControllers count] > 0 ? 0 : INT_MAX;
+//    NINO: not setting selectedIndex so it can be done in viewDidLoad (allow startup highlight to work)
+//    self.selectedIndex = [viewControllers count] > 0 ? 0 : INT_MAX;
 }
 
 
@@ -189,7 +190,7 @@
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    BOOL result;
+    BOOL result = YES;
     
     if ([self.delegate respondsToSelector:@selector(tabBarController:shouldSelectViewController:)]) {
         UIViewController *newController = [self.viewControllers objectAtIndex:indexPath.row];

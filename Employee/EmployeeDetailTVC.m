@@ -79,6 +79,12 @@
     employeeName.delegate = self;
     
     [employeeName becomeFirstResponder];
+    
+    self.navigationController.navigationBar.tintColor = NAVIGATIONBAR_TINT_COLOR;
+    self.tableView.backgroundView = nil;
+    self.tableView.backgroundColor = TABLEVIEW_BACKGROUND_COLOR;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    self.tableView.separatorColor = TABLEVIEW_SEPARATOR_COLOR;
 }
 
 - (void)viewDidUnload
@@ -164,12 +170,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = nil;
-	static NSString *MyIdentifier = @"EmployeeCell";
+	static NSString *MyIdentifier = @"EmployeeDetailCell";
 	
 	cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
 	if (cell == nil) {
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier];
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	}
     
     NSString *text = nil;
@@ -202,6 +209,18 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row % 2)
+    {
+        cell.backgroundColor = TABLEVIEW_CELL1_BACKGROUND_COLOR;
+        cell.textLabel.textColor = TABLEVIEW_CELL1_TEXT_COLOR;
+    }
+    else { 
+        cell.backgroundColor = TABLEVIEW_CELL2_BACKGROUND_COLOR;
+        cell.textLabel.textColor = TABLEVIEW_CELL2_TEXT_COLOR;
+    }
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UIViewController *nextViewController = nil;
     
@@ -225,11 +244,18 @@
 
 
 - (void)save {
-    [employee setObject:employeeName.text forKey:@"name"];
-    [employee setObject:[NSNumber numberWithInteger:(employeeActive.selectedSegmentIndex?0:1)] forKey:@"active"];
-    
-    [employee saveInBackground];
-	[self.delegate didAddEmployee:employee];
+    @try {
+        [employee setObject:employeeName.text forKey:@"name"];
+        [employee setObject:[NSNumber numberWithInteger:(employeeActive.selectedSegmentIndex?0:1)] forKey:@"active"];
+        
+        [employee saveInBackground];
+    }
+    @catch (NSException *exception) {
+        employee = nil;
+    }
+    @finally {
+        [self.delegate didAddEmployee:employee];
+    }
 }
 
 

@@ -79,7 +79,11 @@
     UIBarButtonItem *saveButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStyleDone target:self action:@selector(save)];
     self.navigationItem.rightBarButtonItem = saveButtonItem;
     
-    //self.tableView.allowsSelection = NO;
+    self.navigationController.navigationBar.tintColor = NAVIGATIONBAR_TINT_COLOR;
+    self.tableView.backgroundView = nil;
+    self.tableView.backgroundColor = TABLEVIEW_BACKGROUND_COLOR;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    self.tableView.separatorColor = TABLEVIEW_SEPARATOR_COLOR;
     
     scheduleNotes.delegate = self;
     showingPicker = NO;
@@ -215,6 +219,18 @@
 			break;
 	}
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row % 2)
+    {
+        cell.backgroundColor = TABLEVIEW_CELL1_BACKGROUND_COLOR;
+        cell.textLabel.textColor = TABLEVIEW_CELL1_TEXT_COLOR;
+    }
+    else { 
+        cell.backgroundColor = TABLEVIEW_CELL2_BACKGROUND_COLOR;
+        cell.textLabel.textColor = TABLEVIEW_CELL2_TEXT_COLOR;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -396,12 +412,19 @@
 }
 
 - (void)save {
-    if (![schedule objectForKey:@"date"])
-        [schedule setObject:[NSDate dateWithoutTime] forKey:@"date"];
-    [schedule setObject:[scheduleNotes text] forKey:@"notes"];
-    
-    [schedule saveInBackground];
-	[self.delegate didAddSchedule:schedule];
+    @try {
+        if (![schedule objectForKey:@"date"])
+            [schedule setObject:[NSDate dateWithoutTime] forKey:@"date"];
+        [schedule setObject:[scheduleNotes text] forKey:@"notes"];
+        
+        [schedule saveInBackground];
+    }
+    @catch (NSException *exception) {
+        schedule = nil;
+    }
+    @finally {
+        [self.delegate didAddSchedule:schedule];
+    }
 }
 
 - (void)cancel {

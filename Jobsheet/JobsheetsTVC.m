@@ -114,7 +114,7 @@
             newJobsheets = [[NSMutableArray alloc] init];
         }
         jobsheets = newJobsheets;
-        [self performSelectorOnMainThread:@selector(reloadData)
+        [self performSelectorOnMainThread:@selector(didRefresh)
                                withObject:nil
                             waitUntilDone:NO];
         if (isLoading) {
@@ -124,12 +124,8 @@
     }
 }
 
-- (void)reloadData {
-    if (!isLoading)
-        [self.tableView reloadData];
-}
-
 - (void)refresh {
+    [self willRefresh];
     [self performSelectorInBackground:@selector(refreshInCurrentThread)
                            withObject:nil];
 }

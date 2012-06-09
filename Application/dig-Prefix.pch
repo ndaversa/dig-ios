@@ -8,6 +8,15 @@
 #warning "This project uses features only available in iOS SDK 3.0 and later."
 #endif
 
+#define TABLEVIEW_BACKGROUND_COLOR [UIColor colorWithPatternImage:[UIImage imageNamed:@"scratches.png"]]
+#define NAVIGATIONBAR_TINT_COLOR [UIColor colorWithRed:.35 green:.35 blue:0.35 alpha:1]
+#define TABLEVIEW_SEPARATOR_COLOR [UIColor colorWithRed:.80 green:.80 blue:0.80 alpha:1]
+
+#define TABLEVIEW_CELL1_BACKGROUND_COLOR [UIColor colorWithRed:.88 green:.88 blue:0.88 alpha:1]
+#define TABLEVIEW_CELL1_TEXT_COLOR [UIColor colorWithRed:.30 green:.30 blue:0.30 alpha:1]
+#define TABLEVIEW_CELL2_BACKGROUND_COLOR [UIColor colorWithRed:.90 green:.90 blue:0.90 alpha:1]
+#define TABLEVIEW_CELL2_TEXT_COLOR [UIColor colorWithRed:.30 green:.30 blue:0.30 alpha:1]
+
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>

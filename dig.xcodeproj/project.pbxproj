@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0136103C1583B91F001B0B65 /* darkwall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0136103B1583B91F001B0B65 /* darkwall@2x.png */; };
+		013610441583BC47001B0B65 /* scratches@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 013610431583BC47001B0B65 /* scratches@2x.png */; };
 		0141F38215818B2C000A3C92 /* UIImage+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 0141F38115818B2C000A3C92 /* UIImage+Helpers.m */; };
 		0141F38B15819B47000A3C92 /* fontawesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0141F38A15819B47000A3C92 /* fontawesome.ttf */; };
+		01514F541583DD450096B447 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 01514F521583DD450096B447 /* arrow.png */; };
+		01514F551583DD450096B447 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 01514F531583DD450096B447 /* arrow@2x.png */; };
+		01514F5D1583FA9E0096B447 /* DejalActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01514F5C1583FA9E0096B447 /* DejalActivityView.m */; };
 		016B04F0157C491A00B4F151 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016B04EF157C491A00B4F151 /* UIKit.framework */; };
 		016B04F2157C491A00B4F151 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016B04F1157C491A00B4F151 /* Foundation.framework */; };
 		016B04F4157C491A00B4F151 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016B04F3157C491A00B4F151 /* CoreGraphics.framework */; };
@@ -26,8 +31,6 @@
 		016B0533157C497300B4F151 /* ios-linen.png in Resources */ = {isa = PBXBuildFile; fileRef = 016B0520157C497300B4F151 /* ios-linen.png */; };
 		016B0534157C497300B4F151 /* selectionIndicatorImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 016B0521157C497300B4F151 /* selectionIndicatorImage.png */; };
 		016B0535157C497300B4F151 /* selectionIndicatorImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 016B0522157C497300B4F151 /* selectionIndicatorImage@2x.png */; };
-		016B0536157C497300B4F151 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 016B0524157C497300B4F151 /* arrow.png */; };
-		016B0537157C497300B4F151 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 016B0525157C497300B4F151 /* arrow@2x.png */; };
 		016B0538157C497300B4F151 /* PullRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016B0527157C497300B4F151 /* PullRefreshTableViewController.m */; };
 		016B053B157C49E700B4F151 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016B053A157C49E700B4F151 /* Parse.framework */; };
 		016B053D157C4A0400B4F151 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016B053C157C4A0400B4F151 /* MobileCoreServices.framework */; };
@@ -52,9 +55,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0136103B1583B91F001B0B65 /* darkwall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "darkwall@2x.png"; sourceTree = "<group>"; };
+		013610431583BC47001B0B65 /* scratches@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scratches@2x.png"; sourceTree = "<group>"; };
 		0141F38015818B2C000A3C92 /* UIImage+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Helpers.h"; path = "Helpers/UIImage+Helpers.h"; sourceTree = "<group>"; };
 		0141F38115818B2C000A3C92 /* UIImage+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Helpers.m"; path = "Helpers/UIImage+Helpers.m"; sourceTree = "<group>"; };
 		0141F38A15819B47000A3C92 /* fontawesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fontawesome.ttf; sourceTree = "<group>"; };
+		01514F521583DD450096B447 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
+		01514F531583DD450096B447 /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
+		01514F5B1583FA9E0096B447 /* DejalActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DejalActivityView.h; path = DejalActivityView/DejalActivityView.h; sourceTree = "<group>"; };
+		01514F5C1583FA9E0096B447 /* DejalActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DejalActivityView.m; path = DejalActivityView/DejalActivityView.m; sourceTree = "<group>"; };
 		016B04EB157C491A00B4F151 /* dig.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dig.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		016B04EF157C491A00B4F151 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		016B04F1157C491A00B4F151 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -83,8 +92,6 @@
 		016B0520157C497300B4F151 /* ios-linen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ios-linen.png"; sourceTree = "<group>"; };
 		016B0521157C497300B4F151 /* selectionIndicatorImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selectionIndicatorImage.png; sourceTree = "<group>"; };
 		016B0522157C497300B4F151 /* selectionIndicatorImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selectionIndicatorImage@2x.png"; sourceTree = "<group>"; };
-		016B0524157C497300B4F151 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
-		016B0525157C497300B4F151 /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
 		016B0526157C497300B4F151 /* PullRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullRefreshTableViewController.h; sourceTree = "<group>"; };
 		016B0527157C497300B4F151 /* PullRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullRefreshTableViewController.m; sourceTree = "<group>"; };
 		016B053A157C49E700B4F151 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -106,7 +113,7 @@
 		01860E12157D921800D573F7 /* JobDetailTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JobDetailTVC.xib; path = Job/JobDetailTVC.xib; sourceTree = "<group>"; };
 		0198B1DB158042EF007E32FD /* JobsheetsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JobsheetsTVC.h; path = Jobsheet/JobsheetsTVC.h; sourceTree = "<group>"; };
 		0198B1DC158042EF007E32FD /* JobsheetsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JobsheetsTVC.m; path = Jobsheet/JobsheetsTVC.m; sourceTree = "<group>"; };
-		0198B1DE15804927007E32FD /* JobsheetSelectionTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JobsheetSelectionTVC.xib; sourceTree = "<group>"; };
+		0198B1DE15804927007E32FD /* JobsheetSelectionTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JobsheetSelectionTVC.xib; path = Jobsheet/JobsheetSelectionTVC.xib; sourceTree = "<group>"; };
 		01EAFF6C158022B000A486EE /* SchedulesTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SchedulesTVC.h; path = Schedule/SchedulesTVC.h; sourceTree = "<group>"; };
 		01EAFF6D158022B000A486EE /* SchedulesTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SchedulesTVC.m; path = Schedule/SchedulesTVC.m; sourceTree = "<group>"; };
 		01EAFF6F1580262D00A486EE /* ScheduleDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScheduleDetailTVC.h; path = Schedule/ScheduleDetailTVC.h; sourceTree = "<group>"; };
@@ -138,6 +145,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01514F5A1583FA5E0096B447 /* DejalActivityView */ = {
+			isa = PBXGroup;
+			children = (
+				01514F5B1583FA9E0096B447 /* DejalActivityView.h */,
+				01514F5C1583FA9E0096B447 /* DejalActivityView.m */,
+			);
+			name = DejalActivityView;
+			sourceTree = "<group>";
+		};
 		016B04E0157C491A00B4F151 = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +198,8 @@
 		016B04F5157C491A00B4F151 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				013610431583BC47001B0B65 /* scratches@2x.png */,
+				0136103B1583B91F001B0B65 /* darkwall@2x.png */,
 				016B054E157C4B0E00B4F151 /* VerticalTabBarController.h */,
 				016B054F157C4B0E00B4F151 /* VerticalTabBarController.m */,
 				016B04FE157C491A00B4F151 /* AppDelegate.h */,
@@ -230,6 +248,7 @@
 		016B0518157C497300B4F151 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				01514F5A1583FA5E0096B447 /* DejalActivityView */,
 				0141F38A15819B47000A3C92 /* fontawesome.ttf */,
 				016B053A157C49E700B4F151 /* Parse.framework */,
 				016B0519157C497300B4F151 /* FSVerticalTabBar */,
@@ -257,8 +276,8 @@
 		016B0523157C497300B4F151 /* PullRefresh */ = {
 			isa = PBXGroup;
 			children = (
-				016B0524157C497300B4F151 /* arrow.png */,
-				016B0525157C497300B4F151 /* arrow@2x.png */,
+				01514F521583DD450096B447 /* arrow.png */,
+				01514F531583DD450096B447 /* arrow@2x.png */,
 				016B0526157C497300B4F151 /* PullRefreshTableViewController.h */,
 				016B0527157C497300B4F151 /* PullRefreshTableViewController.m */,
 			);
@@ -366,14 +385,16 @@
 				016B0533157C497300B4F151 /* ios-linen.png in Resources */,
 				016B0534157C497300B4F151 /* selectionIndicatorImage.png in Resources */,
 				016B0535157C497300B4F151 /* selectionIndicatorImage@2x.png in Resources */,
-				016B0536157C497300B4F151 /* arrow.png in Resources */,
-				016B0537157C497300B4F151 /* arrow@2x.png in Resources */,
 				016B054B157C4A8800B4F151 /* iPad.storyboard in Resources */,
 				016B054D157C4ABF00B4F151 /* iPhone.storyboard in Resources */,
 				01860E13157D921800D573F7 /* JobDetailTVC.xib in Resources */,
 				01EAFF731580277C00A486EE /* ScheduleDetailTVC.xib in Resources */,
 				0198B1DF15804928007E32FD /* JobsheetSelectionTVC.xib in Resources */,
 				0141F38B15819B47000A3C92 /* fontawesome.ttf in Resources */,
+				0136103C1583B91F001B0B65 /* darkwall@2x.png in Resources */,
+				013610441583BC47001B0B65 /* scratches@2x.png in Resources */,
+				01514F541583DD450096B447 /* arrow.png in Resources */,
+				01514F551583DD450096B447 /* arrow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +423,7 @@
 				01EAFF7715802C7B00A486EE /* NSDate+Helpers.m in Sources */,
 				0198B1DD158042EF007E32FD /* JobsheetsTVC.m in Sources */,
 				0141F38215818B2C000A3C92 /* UIImage+Helpers.m in Sources */,
+				01514F5D1583FA9E0096B447 /* DejalActivityView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
