@@ -82,7 +82,7 @@
     self.navigationController.navigationBar.tintColor = NAVIGATIONBAR_TINT_COLOR;
     self.tableView.backgroundView = nil;
     self.tableView.backgroundColor = TABLEVIEW_BACKGROUND_COLOR;
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLineEtched;
     self.tableView.separatorColor = TABLEVIEW_SEPARATOR_COLOR;
     
     scheduleNotes.delegate = self;
